@@ -5,7 +5,11 @@ from typing import List, Optional
 from datetime import datetime, timezone
 
 from app import schemas, crud
-from app.database import get_db
+# Added Base to automatically create schemas inside the PostgreSQL cloud instance
+from app.database import get_db, Base, engine
+
+# Automatically spawn tables on the live database if they don't exist yet
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Support CRM API")
 
@@ -39,7 +43,10 @@ def read_tickets(
     search: Optional[str] = Query(None),
     db: Session = Depends(get_db)
 ):
-    return crud.get_tickets(db, status=status, search=search)
+    try:
+        return crud.get_tickets(db, status=status, search=search)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/tickets/{ticket_id}", response_model=schemas.TicketDetailResponse)
 def read_ticket_detail(ticket_id: str, db: Session = Depends(get_db)):
