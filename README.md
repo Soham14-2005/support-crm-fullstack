@@ -61,17 +61,17 @@ npm run dev
 ---
 
 ## 📐 Unified Database Diagram
-The relational schema uses 2 optimized tables mapped out inside PostgreSQL[cite: 1]:
+The relational schema uses 2 optimized tables mapped out inside PostgreSQL:
 
 ### tickets Table
-* id (BigInteger, Primary Key)[cite: 1]
-* ticket_id (String, Unique Index, format: TKT-00X)[cite: 1]
-* customer_name (String)[cite: 1]
-* customer_email (String)[cite: 1]
-* subject (String)[cite: 1]
-* description (Text)[cite: 1]
-* status (String: Open / In Progress / Closed)[cite: 1]
-* created_at / updated_at (Timestamp)[cite: 1]
+* id (BigInteger, Primary Key)
+* ticket_id (String, Unique Index, format: TKT-00X)
+* customer_name (String)
+* customer_email (String)
+* subject (String)
+* description (Text)
+* status (String: Open / In Progress / Closed)
+* created_at / updated_at (Timestamp)
 
 ### notes Table
 * id (BigInteger, Primary Key)[cite: 1]
