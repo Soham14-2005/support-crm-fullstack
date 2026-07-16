@@ -20,10 +20,7 @@ export default function TicketDetailPage({ params }: PageProps) {
   const [message, setMessage] = useState("");
 
   // Checks both Next.js standard and Vite style variables before falling back to local
-  const baseUrl = 
-    process.env.NEXT_PUBLIC_API_URL || 
-    (process.env as any).VITE_API_URL || 
-    "http://127.0.0.1:8000";
+  const baseUrl = "https://support-crm-fullstack-production.up.railway.app";
 
   const fetchTicketDetails = async () => {
     try {
