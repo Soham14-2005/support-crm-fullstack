@@ -25,7 +25,12 @@ export default function Dashboard() {
         if (statusFilter) queryParams.append("status", statusFilter);
         if (search) queryParams.append("search", search);
 
-        const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+        // Checks both Next.js standard and Vite style variables before falling back to local
+        const baseUrl = 
+          process.env.NEXT_PUBLIC_API_URL || 
+          (process.env as any).VITE_API_URL || 
+          "http://127.0.0.1:8000";
+          
         const res = await fetch(`${baseUrl}/api/tickets?${queryParams.toString()}`);
         
         if (res.ok) {
