@@ -21,7 +21,8 @@ export default function NewTicket() {
       setSubmitting(true);
       setError("");
       
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+      // Routes explicitly to your live production API endpoint
+      const baseUrl = "https://support-crm-fullstack-production.up.railway.app";
       const res = await fetch(`${baseUrl}/api/tickets`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
