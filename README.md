@@ -3,9 +3,9 @@
 A functional, high-performance, enterprise-grade customer support management system designed to triage, track, and log technical customer tickets. Built end-to-end to satisfy the core and extended criteria for the Datastraw Intern Technical Assessment.
 
 ## 🔗 Live Deployments & Deliverables
-* Production Frontend Web App: [INSERT YOUR LIVE VERCEL URL HERE]
-* Production Backend API Endpoints: [INSERT YOUR LIVE RAILWAY URL HERE]
-* Technical Video Walkthrough (3-5 Mins): [INSERT YOUR YOUTUBE/LOOM VIDEO LINK HERE]
+* Production Frontend Web App: (https://support-crm-fullstack-one.vercel.app/)
+* Production Backend API Endpoints: [support-crm-fullstack-production.up.railway.app]
+* Technical Video Walkthrough (3-5 Mins): [https://youtu.be/j8M8fyyY1wg]
 
 ---
 
