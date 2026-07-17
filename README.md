@@ -4,7 +4,7 @@ A functional, high-performance, enterprise-grade customer support management sys
 
 ## 🔗 Live Deployments & Deliverables
 * Production Frontend Web App: (https://support-crm-fullstack-one.vercel.app/)
-* Production Backend API Endpoints: [support-crm-fullstack-production.up.railway.app]
+* Production Backend API Endpoints: support-crm-fullstack-production.up.railway.app
 * Technical Video Walkthrough (3-5 Mins): [https://youtu.be/j8M8fyyY1wg]
 
 ---
