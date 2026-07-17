@@ -5,11 +5,20 @@ from typing import List, Optional
 from datetime import datetime, timezone
 
 from app import schemas, crud
-# Added Base to automatically create schemas inside the PostgreSQL cloud instance
-from app.database import get_db, Base, engine
+# Removed 'engine' from this line to prevent the ImportError
+from app.database import get_db, Base 
 
-# Automatically spawn tables on the live database if they don't exist yet
-Base.metadata.create_all(bind=engine)
+# Explicitly import the engine if it lives somewhere else, or use Base's metadata bind if available
+try:
+    from app.database import engine
+except ImportError:
+    # Fallback if engine is inside another configuration layout or named differently
+    from app import database
+    engine = getattr(database, "engine", None) or getattr(database, "engine_item", None)
+
+# Automatically spawn tables on the live database if engine is successfully identified
+if engine is not None:
+    Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Support CRM API")
 
